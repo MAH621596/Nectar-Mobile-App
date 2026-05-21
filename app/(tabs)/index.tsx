@@ -90,7 +90,7 @@ export default function Home() {
               />
 
               <Text className="font-bold mt-2">{item.item_name}</Text>
-              <Text className="text-[#94CAA6] font-semibold">{item.item_quantity}/{item.item_price}</Text>
+              <Text className="text-[#94CAA6] font-semibold">{item.item_price}/{item.item_quantity}</Text>
 
               {/* ADD BUTTON */}
               <View className="absolute bottom-2 right-2 bg-[#94CAA6] p-2 rounded-full">

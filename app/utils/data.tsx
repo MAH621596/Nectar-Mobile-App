@@ -34,31 +34,31 @@ export const popularItemsAPI = [
         image_uri: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924',
         item_name: 'Apple',
         item_quantity: 'kg',
-        item_price: '$2.5',
+        item_price: '$2.87',
     },
     {
         image_uri: 'https://images.unsplash.com/photo-1580915411954-282cb1b0d780',
         item_name: 'Banana',
         item_quantity: 'kg',
-        item_price: '$2.5',
+        item_price: '$14.50',
     },
     {
         image_uri: 'https://images.unsplash.com/photo-1560807707-8cc77767d783',
         item_name: 'Orange',
         item_quantity: 'kg',
-        item_price: '$2.5',
+        item_price: '$36.66',
     },
     {
         image_uri: 'https://images.unsplash.com/photo-1580915411954-282cb1b0d780',
         item_name: 'Banana',
         item_quantity: 'kg',
-        item_price: '$2.5',
+        item_price: '$19.50',
     },
     {
         image_uri: 'https://images.unsplash.com/photo-1560807707-8cc77767d783',
         item_name: 'Orange',
         item_quantity: 'kg',
-        item_price: '$2.5',
+        item_price: '$60.06',
     },
 ]
 
