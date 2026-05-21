@@ -1,8 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image, ScrollView, Text, TextInput, View } from "react-native";
-import { productsAPI } from "../utils/data";
+import { favProductsAPI } from "../utils/data";
 
-export default function Explore() {
+export default function Favorite() {
   return (
     <View className="flex-1 bg-white">
 
@@ -13,7 +13,7 @@ export default function Explore() {
 
         {/* TITLE */}
         <Text className="text-xl font-bold mt-4 text-black text-center">
-          Find Products
+          Favorite Items
         </Text>
 
         {/* SEARCH BAR */}
@@ -27,7 +27,7 @@ export default function Explore() {
 
         {/* CATEGORY CARDS */}
         <View className="flex-row flex-wrap gap-4 mt-3">
-          {productsAPI.map((item, index) => (
+          {favProductsAPI.map((item, index) => (
             <View key={index} className={`w-[47%] h-[170px] p-4 rounded-2xl flex-col gap-3 items-center justify-center border ${item.border_color} ${item.background_color}`}>
               <Image
                 source={{ uri: item.image_uri }}

@@ -1,8 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image, ScrollView, Text, TextInput, View } from "react-native";
-import { categoriesAPI, popularItemsAPI } from "../utils/data";
+import { popularItemsAPI } from "../utils/data";
 
-export default function Home() {
+export default function Profile() {
   return (
     <View className="flex-1 bg-white">
 
@@ -26,50 +26,50 @@ export default function Home() {
 
         {/* TITLE */}
         <Text className="text-3xl font-bold mt-4 text-[#94CAA6]">
-          Nectar 🛒
+          Nectar Profile
         </Text>
 
         <Text className="text-gray-500 mt-1">
           Fresh groceries delivered fast
         </Text>
 
-        {/* SEARCH BAR */}
-        <View className="flex-row items-center bg-gray-100 mt-4 px-4 py-3 rounded-xl gap-2">
-          <MaterialCommunityIcons name="magnify" size={20} color="gray" />
-          <TextInput
-            placeholder="Search vegetables, fruits..."
-            className="flex-1"
-          />
+        <View className="flex-row justify-between items-center mt-6">
+          <Text className="text-xl font-bold">Address</Text>
+          <Text className="text-[#94CAA6]">Edit</Text>
+        </View>
+        <View>
+          <Text className="text-gray-500 mt-1">
+            Street # 30, Plot # 20 Gulshan e Iqbal, Karachi
+          </Text>
         </View>
 
         {/* PROMO BANNER */}
         <View className="bg-[#94CAA6] mt-5 p-5 rounded-2xl flex-row justify-between items-center">
           <View>
             <Text className="text-white text-lg font-bold">
-              30% OFF
+              Williamson Holard
             </Text>
             <Text className="text-white text-sm mt-1">
-              First order discount
+              03367854129
             </Text>
           </View>
 
-          <MaterialCommunityIcons name="cart" size={40} color="white" />
+          <MaterialCommunityIcons name="face-man" size={40} color="white" />
         </View>
 
         {/* CATEGORIES HEADER */}
         <View className="flex-row justify-between items-center mt-6">
-          <Text className="text-xl font-bold">Categories</Text>
-          <Text className="text-[#94CAA6]">See All</Text>
+          <Text className="text-xl font-bold">Search Payment Method</Text>
+          <Text className="text-[#94CAA6]">Add Voucher</Text>
         </View>
 
-        {/* CATEGORY CARDS */}
-        <View className="flex-row flex-wrap gap-3 mt-3">
-          {categoriesAPI.map((item, index) => (
-            <View key={index} className={`w-[47%] p-4 rounded-2xl flex-row items-center justify-between ${item.background_color}`}>
-              <Text className={`font-bold ${item.text_color}`}>{item.brand_name}</Text>
-              <MaterialCommunityIcons name={item.icon_name as any} size={24} color={item.icon_color} />
-            </View>
-          ))}
+        {/* SEARCH BAR */}
+        <View className="flex-row items-center bg-gray-100 mt-4 px-4 py-2 rounded-xl gap-2">
+          <MaterialCommunityIcons name="magnify" size={20} color="gray" />
+          <TextInput
+            placeholder="e.g. Meezan Master Card..."
+            className="flex-1"
+          />
         </View>
 
         {/* POPULAR HEADER */}
