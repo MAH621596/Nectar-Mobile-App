@@ -1,7 +1,6 @@
-import { Image } from 'expo-image';
 import { useRouter } from "expo-router";
 import { useEffect } from "react";
-import { View } from "react-native";
+import { Image, View } from 'react-native';
 
 export default function Splash() {
   const router = useRouter();
@@ -17,8 +16,9 @@ export default function Splash() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#94CAA6" }}>
       <Image
-          source={require('@/assets/images/logo.png')}
+          source={{ uri: 'https://res.cloudinary.com/deuefwh7b/image/upload/v1747840000/logo_lqog87.png' }}
           style={{ width: 260, height: 60, alignSelf: 'center' }}
+          resizeMode="contain"
         />
     </View>
   );
