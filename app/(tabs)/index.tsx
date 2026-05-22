@@ -1,5 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import { CartButton, ProductCard, SearchBar } from "../components";
 import { categoriesAPI, popularItemsAPI } from "../utils/data";
 
 export default function Home() {
@@ -33,14 +34,8 @@ export default function Home() {
           Fresh groceries delivered fast
         </Text>
 
-        {/* SEARCH BAR */}
-        <View className="flex-row items-center bg-gray-100 mt-4 px-4 py-3 rounded-xl gap-2">
-          <MaterialCommunityIcons name="magnify" size={20} color="gray" />
-          <TextInput
-            placeholder="Search vegetables, fruits..."
-            className="flex-1"
-          />
-        </View>
+        {/* SEARCH BAR */} 
+        <SearchBar placeholder="Search vegetables, fruits..." />
 
         {/* PROMO BANNER */}
         <View className="bg-[#94CAA6] mt-5 p-5 rounded-2xl flex-row justify-between items-center">
@@ -80,35 +75,13 @@ export default function Home() {
 
         {/* PRODUCTS */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-3">
-
-          {popularItemsAPI.map((item, index) => (
-            <View key={index} className="bg-white border border-gray-200 p-3 rounded-2xl mr-3 w-40">
-
-              <Image
-                source={{ uri: item.image_uri }}
-                className="w-full h-24 rounded-xl"
-              />
-
-              <Text className="font-bold mt-2">{item.item_name}</Text>
-              <Text className="text-[#94CAA6] font-semibold">{item.item_price}/{item.item_quantity}</Text>
-
-              {/* ADD BUTTON */}
-              <View className="absolute bottom-2 right-2 bg-[#94CAA6] p-2 rounded-full">
-                <MaterialCommunityIcons name="plus" size={18} color="white" />
-              </View>
-
-            </View>
-          ))}
-
+          <ProductCard data={popularItemsAPI} />
         </ScrollView>
 
       </ScrollView>
 
       {/* FLOATING CART BUTTON */}
-      <View className="absolute bottom-6 right-6 bg-[#94CAA6] p-4 rounded-full shadow-lg">
-        <MaterialCommunityIcons name="cart" size={26} color="white" />
-      </View>
-
+      <CartButton />
     </View>
   );
 }

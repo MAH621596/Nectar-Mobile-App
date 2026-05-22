@@ -1,5 +1,5 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import { CartButton, CategoryCard, SearchBar } from "../components";
 import { productsAPI } from "../utils/data";
 
 export default function Explore() {
@@ -16,33 +16,17 @@ export default function Explore() {
           Find Products
         </Text>
 
-        {/* SEARCH BAR */}
-        <View className="flex-row items-center bg-gray-100 mt-4 px-4 py-2 rounded-xl gap-2">
-          <MaterialCommunityIcons name="magnify" size={20} color="gray" />
-          <TextInput
-            placeholder="Search Store..."
-            className="flex-1"
-          />
-        </View>
+        {/* SEARCH BAR */} 
+         <SearchBar placeholder="Search Store..." />
 
         {/* CATEGORY CARDS */}
         <View className="flex-row flex-wrap gap-4 mt-3">
-          {productsAPI.map((item, index) => (
-            <View key={index} className={`w-[47%] h-[170px] p-4 rounded-2xl flex-col gap-3 items-center justify-center border ${item.border_color} ${item.background_color}`}>
-              <Image
-                source={{ uri: item.image_uri }}
-                className="w-20 h-20 rounded-xl"
-              />
-              <Text className={`text-lg font-bold text-black`}>{item.brand_name}</Text>
-            </View>
-          ))}
+          <CategoryCard data={productsAPI} />
         </View>
       </ScrollView>
 
       {/* FLOATING CART BUTTON */}
-      <View className="absolute bottom-6 right-6 bg-[#94CAA6] p-4 rounded-full shadow-lg">
-        <MaterialCommunityIcons name="cart" size={26} color="white" />
-      </View>
+      <CartButton />
 
     </View>
   );

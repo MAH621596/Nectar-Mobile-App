@@ -1,5 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
+import { CartButton } from "../components";
 
 export default function Cart() {
   return (
@@ -17,9 +18,7 @@ export default function Cart() {
         </Text>
         
       {/* FLOATING CART BUTTON */}
-      <View className="absolute bottom-6 right-6 bg-[#94CAA6] p-4 rounded-full shadow-lg">
-        <MaterialCommunityIcons name="cart" size={26} color="white" />
-      </View>
+      <CartButton />
 
     </View>
   );
